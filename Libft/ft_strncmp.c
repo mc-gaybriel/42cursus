@@ -3,10 +3,11 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gnickel <gnickel@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: gnickel <gnickel@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 19:10:59 by gnickel           #+#    #+#             */
-/*   Updated: 2023/10/24 19:11:00 by gnickel          ###   ########.fr       */
+/*   Created: 2023/10/24 23:25:12 by gnickel           #+#    #+#             */
+/*   Updated: 2023/10/24 23:25:26 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
