@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gnickel <gnickel@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 19:33:53 by gnickel           #+#    #+#             */
-/*   Updated: 2023/10/27 00:17:01 by gnickel          ###   ########.fr       */
+/*   Created: 2023/10/27 16:07:07 by gnickel           #+#    #+#             */
+/*   Updated: 2023/10/27 17:21:13 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strdup(const char *s1)
 {
-	int	sign;
-	int	ret;
+	char	*dest;
+	char	*dest0;
 
-	sign = 1;
-	ret = 0;
-	while (*str == ' ' || *str == '\t' || *str == '\n'
-		|| *str == '\v' || *str == '\f' || *str == '\r')
-		str++;
-	if (*str == '-' || *str == '+')
+	dest = (char *)malloc(ft_strlen(s1) + 1);
+	dest0 = dest;
+	if (dest)
 	{
-		if (*(str++) == '-')
-			sign = -1;
+		while (*s1)
+			*dest++ = *s1++;
+		*dest = 0;
 	}
-	while (ft_isdigit(*str))
-		ret = ret * 10 + sign * (*str++ - '0');
-	return (ret);
+	return (dest0);
 }
