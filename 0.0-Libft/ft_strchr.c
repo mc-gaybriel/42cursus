@@ -6,7 +6,7 @@
 /*   By: gnickel <gnickel@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:09:01 by gnickel           #+#    #+#             */
-/*   Updated: 2023/10/24 13:09:02 by gnickel          ###   ########.fr       */
+/*   Updated: 2023/10/30 13:49:32 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != c || *s == 0)
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
 		s++;
-	if (*s == c)
+	}
+	if (!(char)c)
 		return ((char *)s);
-	else
-		return (0);
+	return (0);
 }

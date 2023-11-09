@@ -6,7 +6,7 @@
 /*   By: gnickel <gnickel@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 21:49:20 by gnickel           #+#    #+#             */
-/*   Updated: 2023/10/23 22:11:41 by gnickel          ###   ########.fr       */
+/*   Updated: 2023/11/09 02:43:31 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	dst_ptr = dst;
 	src_ptr = src;
 	i = 0;
+	if (!dst_ptr && !src_ptr)
+		return (0);
 	while (i < n)
 	{
 		dst_ptr[i] = src_ptr[i];
