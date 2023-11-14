@@ -6,7 +6,7 @@
 /*   By: gnickel <gnickel@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 15:19:42 by gnickel           #+#    #+#             */
-/*   Updated: 2023/11/13 19:42:52 by gnickel          ###   ########.fr       */
+/*   Updated: 2023/11/14 16:08:08 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	size_t	start;
+	size_t	start = 0;
 	size_t	end;
 	size_t	n_len;
 	char	*e_str;
