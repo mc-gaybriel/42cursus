@@ -6,15 +6,16 @@
 /*   By: gnickel <gnickel@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:54:20 by gnickel           #+#    #+#             */
-/*   Updated: 2023/10/26 23:23:33 by gnickel          ###   ########.fr       */
+/*   Updated: 2023/11/23 16:22:35 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define LIBFT_H
+#define LIBFT_H
 
-# include "unistd.h"
-# include "stdlib.h"
+#include "unistd.h"
+#include "stdlib.h"
+#include "limits.h"
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
