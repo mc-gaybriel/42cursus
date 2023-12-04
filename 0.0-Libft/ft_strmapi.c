@@ -6,7 +6,7 @@
 /*   By: gnickel <gnickel@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 06:41:24 by gnickel           #+#    #+#             */
-/*   Updated: 2023/11/29 19:55:40 by gnickel          ###   ########.fr       */
+/*   Updated: 2023/12/04 18:49:48 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 		return (0);
 	while (i < len)
 	{
-		res[i] = f((unsigned int)i,s[i]);
+		res[i] = f((unsigned int)i, s[i]);
 		i++;
 	}
 	res[len] = 0;

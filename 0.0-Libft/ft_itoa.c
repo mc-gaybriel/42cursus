@@ -6,12 +6,13 @@
 /*   By: gnickel <gnickel@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:41:47 by gnickel           #+#    #+#             */
-/*   Updated: 2023/11/23 16:34:17 by gnickel          ###   ########.fr       */
+/*   Updated: 2023/12/04 19:20:32 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+char	*convert_to_string(int n, size_t digits, int is_neg);
 size_t	get_digits(int n);
 
 typedef struct itoa_vars
@@ -26,32 +27,42 @@ char	*ft_itoa(int n)
 {
 	t_itoa_vars	mc;
 
-	mc.digits = get_digits(n);
-	mc.res = (char *)malloc(mc.digits + 2);
-	mc.is_neg = 0;
-	if (!mc.res)
-		return (0);
 	if (n == INT_MIN)
-    {
-        mc.is_neg = 1;
-        n = -(n + 1);
-    }
-	else if (n < 0)
+	{
+		mc.is_neg = 1;
+		mc.res = ft_strdup("-2147483648");
+		return (mc.res);
+	}
+	mc.digits = get_digits(n);
+	mc.is_neg = 0;
+	if (n < 0)
 	{
 		mc.is_neg = 1;
 		n = -n;
 	}
-	mc.i = mc.digits - 1;
-	while (mc.i >= 0)
-	{
-		mc.res[mc.i] = '0' + (n % 10);
-		n /= 10;
-		mc.i--;
-	}
-	mc.res[mc.digits] = 0;
-	if (mc.is_neg)
-		mc.res[0] = '-';
+	mc.res = convert_to_string(n, mc.digits, mc.is_neg);
 	return (mc.res);
+}
+
+char	*convert_to_string(int n, size_t digits, int is_neg)
+{
+	char	*res;
+	int		i;
+
+	res = (char *)malloc(digits + 1);
+	if (!res)
+		return (0);
+	i = digits - 1;
+	while (i >= 0)
+	{
+		res[i] = '0' + (n % 10);
+		n /= 10;
+		i--;
+	}
+	res[digits] = '\0';
+	if (is_neg)
+		res[0] = '-';
+	return (res);
 }
 
 size_t	get_digits(int n)
@@ -59,15 +70,12 @@ size_t	get_digits(int n)
 	size_t	digits;
 
 	digits = 1;
-	if (n == INT_MIN)
-		return (sizeof(int) * 8);
 	if (n < 0)
 	{
 		digits++;
 		n = -n;
 	}
-	n /= 10;
-	while (n)
+	while (n / 10 != 0)
 	{
 		n /= 10;
 		digits++;
