@@ -6,7 +6,7 @@
 /*   By: gnickel <gnickel@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:03:48 by gnickel           #+#    #+#             */
-/*   Updated: 2023/10/25 15:03:45 by gnickel          ###   ########.fr       */
+/*   Updated: 2023/12/04 20:24:24 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 	lo = 0;
 	while (*s != 0)
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			lo = s;
 		s++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)s);
 	return ((char *)lo);
 }
