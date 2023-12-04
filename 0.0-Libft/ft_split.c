@@ -6,7 +6,7 @@
 /*   By: gnickel <gnickel@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:52:35 by gnickel           #+#    #+#             */
-/*   Updated: 2023/12/04 20:12:59 by gnickel          ###   ########.fr       */
+/*   Updated: 2023/12/04 20:13:34 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,6 @@ static void	fill_res(const char *s, char **res, char c)
 static void	copy_word(char **res, const char *s, int *word_i, int word_len)
 {
 	res[*word_i] = (char *)malloc((word_len + 1) * sizeof(char));
-	if (!res)
-		return;
 	if (res[*word_i])
 		ft_strlcpy(res[(*word_i)++], s - word_len, word_len + 1);
 }
