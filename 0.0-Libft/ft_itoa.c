@@ -6,14 +6,14 @@
 /*   By: gnickel <gnickel@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:41:47 by gnickel           #+#    #+#             */
-/*   Updated: 2023/12/04 19:20:32 by gnickel          ###   ########.fr       */
+/*   Updated: 2023/12/04 23:28:11 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*convert_to_string(int n, size_t digits, int is_neg);
-size_t	get_digits(int n);
+static char		*convert_to_string(int n, size_t digits, int is_neg);
+static size_t	get_digits(int n);
 
 typedef struct itoa_vars
 {
@@ -44,7 +44,7 @@ char	*ft_itoa(int n)
 	return (mc.res);
 }
 
-char	*convert_to_string(int n, size_t digits, int is_neg)
+static char	*convert_to_string(int n, size_t digits, int is_neg)
 {
 	char	*res;
 	int		i;
@@ -65,7 +65,7 @@ char	*convert_to_string(int n, size_t digits, int is_neg)
 	return (res);
 }
 
-size_t	get_digits(int n)
+static size_t	get_digits(int n)
 {
 	size_t	digits;
 

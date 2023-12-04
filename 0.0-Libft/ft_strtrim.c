@@ -6,12 +6,11 @@
 /*   By: gnickel <gnickel@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 15:19:42 by gnickel           #+#    #+#             */
-/*   Updated: 2023/12/04 20:19:41 by gnickel          ###   ########.fr       */
+/*   Updated: 2023/12/04 23:26:42 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 typedef struct strtrim_vars
 {

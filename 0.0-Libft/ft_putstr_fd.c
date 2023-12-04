@@ -6,12 +6,11 @@
 /*   By: gnickel <gnickel@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 20:08:11 by gnickel           #+#    #+#             */
-/*   Updated: 2023/11/29 20:11:05 by gnickel          ###   ########.fr       */
+/*   Updated: 2023/12/04 23:33:50 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {

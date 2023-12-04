@@ -6,21 +6,13 @@
 /*   By: gnickel <gnickel@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 20:31:02 by gnickel           #+#    #+#             */
-/*   Updated: 2023/11/07 16:14:34 by gnickel          ###   ########.fr       */
+/*   Updated: 2023/12/04 23:27:36 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*empty_string(void)
-{
-	char	*e_str;
-
-	e_str = (char *)malloc(1);
-	if (e_str)
-		e_str[0] = 0;
-	return (e_str);
-}
+static char	*empty_string(void);
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
@@ -47,4 +39,14 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	}
 	sub_s[i] = 0;
 	return (sub_s);
+}
+
+static char	*empty_string(void)
+{
+	char	*e_str;
+
+	e_str = (char *)malloc(1);
+	if (e_str)
+		e_str[0] = 0;
+	return (e_str);
 }
