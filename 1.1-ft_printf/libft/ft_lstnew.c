@@ -1,13 +1,25 @@
 /* ************************************************************************** */
-/*                                                                        ה"ב */
+/*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gnickel <gnickel@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 16:25:28 by gnickel           #+#    #+#             */
-/*   Updated: 2024/03/07 16:26:50 by gnickel          ###   ########.fr       */
+/*   Created: 2023/12/04 21:48:30 by gnickel           #+#    #+#             */
+/*   Updated: 2023/12/04 22:13:49 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*lst;
+
+	lst = malloc(sizeof(t_list));
+	if (!lst)
+		return (0);
+	lst->content = content;
+	lst->next = 0;
+	return (lst);
+}

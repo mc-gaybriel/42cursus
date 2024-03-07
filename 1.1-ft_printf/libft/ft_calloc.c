@@ -1,13 +1,23 @@
 /* ************************************************************************** */
-/*                                                                        ה"ב */
+/*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gnickel <gnickel@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 16:25:28 by gnickel           #+#    #+#             */
-/*   Updated: 2024/03/07 16:26:50 by gnickel          ###   ########.fr       */
+/*   Created: 2023/10/27 15:39:55 by gnickel           #+#    #+#             */
+/*   Updated: 2023/10/27 16:05:54 by gnickel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
+
+	ptr = malloc(count * size);
+	if (ptr)
+		ft_memset(ptr, 0, count * size);
+	return (ptr);
+}
