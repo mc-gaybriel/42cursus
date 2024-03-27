@@ -1,25 +1,42 @@
-NAME	= libftprintf.a
+NAME		=	libftprintf.a
 
-SRC		= ./src/ft_printf.c ./libft/Makefile
+CC			=	gcc
+CFLAGS		=	-Wall -Werror -Wextra
+AR			=	ar
+ARFLAGS		=	rcs
+RM			=	rm -rf
 
-CC		= gcc
-CFLAGS	= -Wall -Werror -Wextra
-OBJ		= $(SRC:.c=.o)
+SRCS		=	$(wildcard ./src/*.c)
+
+OBJ_DIR		=	obj
+OBJS		=	$(SRC:%.c=$(OBJ_DIR)/%.o)
+
+LIBFT_PATH	=	./libft
+LIBFT		=	$(LIBFT_PATH)/libft.a
 
 .PHONY: all clean fclean re
 
-all: libft $(NAME)
+all:			$(NAME)
 
-$(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
+$(OBJ_DIR)/%.o:	%.c
+				$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME):	$(LIBFT) $(OBJ_DIR) $(OBJS)
+			cp	$(LIBFT) $(NAME)
+				$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+
+$(LIBFT):
+				make -C $(LIBFT_PATH) all
+
+$(OBJ_DIR):
+				mkdir -p $(OBJ_DIR)
 
 clean:
-	rm -f $(OBJ)
+				make -C $(LIBFT_PATH) clean
+				$(RM) $(OBJ_DIR)
 
-fclean: clean
-	rm -f $(NAME)
+fclean:		clean
+				make -C $(LIBFT_PATH) fclean
+				$(RM) $(NAME)
 
-re: fclean all
-
-libft:
-    @$(MAKE) -C libft -f Makefile
+re:			fclean all
